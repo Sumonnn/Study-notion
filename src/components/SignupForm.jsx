@@ -17,6 +17,7 @@ function SignupForm({ setIsLoggedin }) {
   const Navigate = useNavigate();
 
   const [showPassword, setshowPassword] = useState(false);
+  const [showConfirmPassword, setshowConfirmPassword] = useState(false);
 
   function changeHandler(event) {
     setformData((prevData) => (
@@ -110,15 +111,15 @@ function SignupForm({ setIsLoggedin }) {
             <p>Confirm Password<sup>*</sup></p>
             <input
               required
-              type={showPassword ? 'text' : 'password'}
+              type={showConfirmPassword ? 'text' : 'password'}
               value={formData.confirmPassword}
               name="confirmPassword"
               onChange={changeHandler}
               placeholder="Confirm password"
             />
 
-            <span onClick={() => setshowPassword((prev) => !prev)}>
-              {showPassword ? (<AiOutlineEyeInvisible />) : (<AiOutlineEye />)}
+            <span onClick={() => setshowConfirmPassword((prev) => !prev)}>
+              {showConfirmPassword ? (<AiOutlineEyeInvisible />) : (<AiOutlineEye />)}
             </span>
           </label>
         </div>
