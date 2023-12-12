@@ -10,11 +10,11 @@ const Navbar = (props) => {
   return (
     <div className="flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto">
       <Link to='/'>
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" height={32} width={160} loading="lazy" />
       </Link>
 
       <nav>
-        <ul className="flex gap-6 text-richblack-100">
+        <ul className="flex gap-x-6 text-white">
           <li>
             <Link to='/'>Home</Link>
           </li>
@@ -29,15 +29,15 @@ const Navbar = (props) => {
 
       {/* login - signup - logout - dashboard */}
 
-      <div className="flex items-center gap-x-4 text-richblack-100">
+      <div className="flex items-center gap-x-4 text-white">
         {!isLoggedin &&
           <Link to='/login'>
-            <button>Login</button>
+            <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">Login</button>
           </Link>
         }
         {!isLoggedin &&
           <Link to='/signup'>
-            <button>Signup</button>
+            <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">Signup</button>
           </Link>
         }
         {isLoggedin &&
@@ -45,12 +45,12 @@ const Navbar = (props) => {
             <button onClick={() => {
               setIsLoggedin(false)
               toast.success('Logged out');
-            }}>Logout</button>
+            }} className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">Logout</button>
           </Link>
         }
         {isLoggedin &&
           <Link to='/dashboard'>
-            <button>Dashboard</button>
+            <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">Dashboard</button>
           </Link>
         }
       </div>
